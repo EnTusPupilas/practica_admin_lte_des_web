@@ -1,1 +1,43 @@
-{{ object.id  }} - {{ object.name }}
+{% extends 'srcView.html' %}
+
+{% load static %}
+{% block section %}
+<h2>{{ object.name }}</h2>
+<hr>
+{% endblock section %}
+
+{% block maincontent %}
+<div>
+    <table class="table table-danger">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in object.get_players.all %}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{p.first_name}}</td>
+                <td>{{p.last_name}}</td>
+                <td>
+                    <a href="{% url "player-detail" p.id %}">
+                        <img src="{% static p.photo.url %}"
+                            style="width:170px;height:200px" />
+                    </a>
+                </td>
+                <td>
+                    <a href="{% url "player-update" object.id %}">edit</a>
+                    <a href="{% url "player-delete" object.id %}">delete</a> 
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock maincontent %}
