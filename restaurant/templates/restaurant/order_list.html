@@ -1,0 +1,36 @@
+{% extends 'srcView.html' %}
+{% comment %} ############ {% endcomment %}
+
+{% load static %}
+{% block section %}
+<h2>{{ object.name }}</h2>
+<hr>
+{% endblock section %}
+
+{% block maincontent %}
+<div>
+    <table class="table table-danger">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Client</th>
+                <th scope="col">Menu</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in object_list %}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{p.client}}</td>
+                <td>{{p.menu}}</td>
+                <td>{{p.amount}}</td>
+                <td>{{p.total}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock maincontent %}"

@@ -1,0 +1,48 @@
+{% extends 'srcView.html' %}
+{% comment %} ############ {% endcomment %}
+
+{% load static %}
+{% block section %}
+<h2>{{ object.name }}</h2>
+<hr>
+{% endblock section %}
+
+{% block maincontent %}
+<div>
+    <table class="table table-danger">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Price</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in object_list %}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{p.name}}</td>
+                <td>{{p.type}}</td>
+                <td>
+                    {{p.price}}
+                </td>
+                <td>
+                    <a href="">
+                        <img src="{% static p.img.url %}"
+                            style="width:170px;height:200px" />
+                    </a>
+                </td>
+                <td>
+                    <a href="{% url "menu-update" p.id %}">edit</a>
+                    <a href="{% url "menu-delete" p.id %}">delete</a> 
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock maincontent %}"

@@ -1,0 +1,10 @@
+{% extends 'srcView.html' %}
+
+{% block content %}
+    <h2>Create Menu</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Menu</button>
+    </form>
+{% endblock %}

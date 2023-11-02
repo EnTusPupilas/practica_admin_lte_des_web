@@ -26,3 +26,5 @@ class PlayerCreate(CreateView):
 class PlayerDelete(DeleteView):
     model = Player
     success_url = reverse_lazy('player-list')
+    
+

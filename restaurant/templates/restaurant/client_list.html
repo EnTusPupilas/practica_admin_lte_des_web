@@ -1,0 +1,37 @@
+{% extends 'srcView.html' %}
+{% comment %} ############ {% endcomment %}
+
+{% load static %}
+{% block section %}
+<h2>{{ object.name }}</h2>
+<hr>
+{% endblock section %}
+
+{% block maincontent %}
+<div>
+    <table class="table table-danger">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Table</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in object_list %}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{p.name}}</td>
+                <td>{{p.table}}</td>
+                </td>
+                <td>
+                    <a href="{% url "client-update" p.id %}">edit</a>
+                    <a href="{% url "client-delete" p.id %}">delete</a> 
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock maincontent %}"
