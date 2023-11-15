@@ -25,8 +25,8 @@
                 <td>{{p.table}}</td>
                 </td>
                 <td>
-                    <a href="{% url "client-update" p.id %}">edit</a>
-                    <a href="{% url "client-delete" p.id %}">delete</a> 
+                    <a type="button" class="btn btn-block btn-primary" href="{% url "client-update" p.id %}">Edit</a>
+                    <a type="button" class="btn btn-block btn-danger" href="{% url "client-delete" p.id %}">Delete</a> 
                 </td>
             </tr>
             {% endfor %}

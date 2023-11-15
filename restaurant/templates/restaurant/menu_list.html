@@ -36,8 +36,8 @@
                     </a>
                 </td>
                 <td>
-                    <a href="{% url "menu-update" p.id %}">edit</a>
-                    <a href="{% url "menu-delete" p.id %}">delete</a> 
+                    <a type="button" class="btn btn-block btn-primary" href="{% url "menu-update" p.id %}">Edit</a>
+                    <a type="button" class="btn btn-block btn-danger" href="{% url "menu-delete" p.id %}">Delete</a>
                 </td>
             </tr>
             {% endfor %}
