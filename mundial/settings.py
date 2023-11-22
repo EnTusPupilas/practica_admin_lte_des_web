@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'album',
     'restaurant',
     'crispy_forms',
+    'bootstrap5',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
