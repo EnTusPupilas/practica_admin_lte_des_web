@@ -33,11 +33,13 @@
                         <h5 class="card-title">{{p.name}}</h5>
                     </div>
                     <div class="card-body">
-                      <p class="card-text">Un festín de ingredientes frescos y condimentos auténticos que deleitará tu paladar y te transportará a la calidez de la gastronomía caribeña.</p>
+                      <p class="card-text">A feast of fresh ingredients and authentic condiments that will delight your palate and transport you to the warmth of Caribbean cuisine.</p>
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          
+                          <!--  <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
                           <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url "menu-update" p.id %}">Edit</a>
+                          <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url "menu-delete" p.id %}">Delete</a>
                         </div>
                         <small class="text-body-secondary">9 mins</small>
                       </div>

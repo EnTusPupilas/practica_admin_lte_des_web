@@ -15,9 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from album import views
 from restaurant import views
+from post.api.router import router_posts
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -66,5 +67,8 @@ urlpatterns = [
     # #Delete
     path('client/<int:pk>/delete/', views.ClientDelete.as_view(), name='client-delete'),
     path('client/create/', views.ClientCreateView.as_view(), name='client-create'),
+    
+    # #============================================================================   
+    path('api/', include(router_posts.urls))
     
 ]
