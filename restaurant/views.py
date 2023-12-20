@@ -78,3 +78,4 @@ class OrderCreateView(CreateView):
     form_class = OrderForm
     template_name = 'restaurant/order_create.html'  # Asegúrate de tener el nombre correcto de tu plantilla
     success_url = reverse_lazy('order-list')
+    
