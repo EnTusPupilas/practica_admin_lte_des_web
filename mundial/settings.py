@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'post',
     #Local
     'accounts.apps.AccountsConfig',
+    'pages.apps.PagesConfig',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -66,7 +67,8 @@ ROOT_URLCONF = 'mundial.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['./mundial/templates'],
+        #'DIRS': ['./mundial/templates'],
+        'DIRS': (BASE_DIR, 'templates'),
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

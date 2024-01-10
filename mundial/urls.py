@@ -22,6 +22,7 @@ from post.api.router import router_posts
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("", include("pages.urls")), # new
     # path('selection/', views.SelectionListView.as_view(), name='selection-list'),
     # path('selection/<int:pk>/detail/', views.SelectionDetailView.as_view(), name='selection-detail'),
     # path('player/', views.PlayerListView.as_view(), name='player-list'),
