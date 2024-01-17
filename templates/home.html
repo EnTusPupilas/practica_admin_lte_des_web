@@ -2,13 +2,25 @@
 {% extends "_base.html" %}
 {% block title %}Home{% endblock title %}
 {% block content %}
-    <h1>This is our home page.</h1>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <div class="container text-center mt-5">
+        <h1>WELCOME!!! this is our home page.</h1>
+    </div>
+
     {% if user.is_authenticated %}
-        <p>Hi {{ user.email }}!</p>
-        <p><a href="{% url 'logout' %}">Log Out</a></p>
+        <div class="container text-center mt-5">
+            <h2>Hi {{ user.username }}!</h2> <!-- No cambiar -->
+        </div>
+        <div class="container text-right mt-3">
+        <p><a href="{% url 'logout' %}" class="btn btn-danger">Log Out</a></p>
+        </div>
     {% else %}
-        <p>You are not logged in</p>
-        <a href="{% url 'login' %}">Log In</a>
-        <a href="{% url 'signup' %}">Sign Up</a>
+        <div class="container text-center mt-5">
+            <p>You are not logged in</p>
+        </div>
+        <div class="container text-center mt-5">
+            <a href="{% url 'login' %}" class="custom-link btn btn-primary">Log In</a>
+            <a href="{% url 'signup' %}" class="custom-link btn btn-success">Sign Up</a>
+        </div>
     {% endif %}
 {% endblock content %}

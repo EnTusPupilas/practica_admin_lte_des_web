@@ -5,6 +5,13 @@ from django.contrib.auth.admin import UserAdmin
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 CustomUser = get_user_model()
 class CustomUserAdmin(UserAdmin):
+    """
+        Configuración personalizada para la administración de usuarios en el panel de administración.
+
+        Este UserAdmin personalizado utiliza formularios personalizados para la creación
+        y modificación de usuarios. Además, personaliza la visualización de los usuarios
+        en la lista del panel de administración.
+    """
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
